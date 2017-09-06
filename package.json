@@ -1,0 +1,55 @@
+{
+  "_from": "git+https://github.com/paolorovella/multiple-range-input.git",
+  "_id": "multiple-range-input@1.0.6",
+  "_inBundle": false,
+  "_integrity": "sha1-t0N9Te2GXMa+57rJ7k3Y8zsR4mc=",
+  "_location": "/multiple-range-input",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "git+https://github.com/paolorovella/multiple-range-input.git",
+    "rawSpec": "git+https://github.com/paolorovella/multiple-range-input.git",
+    "saveSpec": "git+https://github.com/paolorovella/multiple-range-input.git",
+    "fetchSpec": "https://github.com/paolorovella/multiple-range-input.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/paolorovella/multiple-range-input.git#066135f273b92132e4b47dc05f37ab536d5c9950",
+  "_spec": "git+https://github.com/paolorovella/multiple-range-input.git",
+  "_where": "/home/cybrwolf/wrk/disbrain/WebApp",
+  "author": {
+    "name": "Paolo Rovella"
+  },
+  "bugs": {
+    "url": "https://github.com/paolorovella/multiple-range-input/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Creates an input to set multiple range based values (jQuery plugin)",
+  "homepage": "https://github.com/paolorovella/multiple-range-input",
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem",
+    "jquery",
+    "multiple",
+    "range",
+    "input",
+    "slider",
+    "drag",
+    "ui"
+  ],
+  "license": "MIT",
+  "main": "multiple-range-input.js",
+  "name": "multiple-range-input",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paolorovella/multiple-range-input.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.6"
+}

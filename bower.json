@@ -1,0 +1,30 @@
+{
+  "name": "multiple-range-input",
+  "main": "multiple-range-input.js",
+  "version": "1.0.6",
+  "dependencies": {
+    "jquery": ">=1.6"
+  },
+  "homepage": "https://github.com/paolorovella/multiple-range-input",
+  "authors": [
+    "Paolo Rovella <paolo.rovella@gmail.com>"
+  ],
+  "description": "Creates an input to set multiple range based values (jQuery plugin)",
+  "keywords": [
+    "jquery",
+    "multiple",
+    "range",
+    "input",
+    "slider",
+    "drag",
+    "ui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

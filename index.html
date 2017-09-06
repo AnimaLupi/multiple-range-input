@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Multiple Range Interface jQuery Plugin</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="theme.css" />
+		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+		<style type="text/css">
+			body {background: #333333;color:#FFFFFF;}
+			h1, h2 {font-family:Oswald;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Multiple Range Interface <small>jQuery Plugin</small></h1>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						<button class="btn btn-success" onclick="$('#range-interface').multipleRangeInterface('addSection');updateJsonText();">Add Section</button>&nbsp;
+						<button class="btn btn-danger" onclick="$('#range-interface').multipleRangeInterface('deleteSection', $('#range-interface').multipleRangeInterface('getSelectedSection').id);updateJsonText();">Delete Selected Section</button>
+					</p>
+				</div>
+				<div class="col-lg-12">
+					<div id="range-interface"></div>
+				</div>
+				<div class="col-lg-12">
+					<h2>Data Format</h2>
+					<pre></pre>
+				</div>
+			</div>
+			<div class="row">
+				<p class="text-center">By <a href="http://grimmdude.com" target="_blank">Garrett Grimm</a></p>
+			</div>
+			<a href="https://github.com/grimmdude/multiple-range-interface"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="multiple-range-interface.js"></script>
+		<script type="text/javascript">
+			// Initialize multiple-range-interface 
+			$('#range-interface').multipleRangeInterface({
+													onChange : function() {
+														updateJsonText();
+													},
+													onSectionClick : function() {
+														updateJsonText();
+													}
+												});
+
+			
+
+
+
+
+			// Throw in some fancy animation to show how it works...
+			$('#range-interface').multipleRangeInterface('addSection').multipleRangeInterface('addSection');
+
+		  	$({sectionStart: 0}).animate({sectionStart: 120}, {
+		 		duration: 700,
+		  		easing:'swing', // can be anything
+				step: function() { // called on every step
+		   			// Update the element's text with rounded-up value:
+		   			$('#range-interface').multipleRangeInterface('setValues', {id:1, start: Math.round(this.sectionStart)});
+		   			updateJsonText();
+				},
+				complete: function() {
+							  	$({sectionStop: 145}).animate({sectionStop: 250}, {
+						 		duration: 700,
+						  		easing:'swing', // can be anything
+								step: function() { // called on every step
+						   			// Update the element's text with rounded-up value:
+						   			$('#range-interface').multipleRangeInterface('setValues', {id:1, stop: Math.round(this.sectionStop)});
+						   			updateJsonText();
+								},
+								complete: function() {
+									$({sectionStart: 0}).animate({sectionStart: 270}, {
+							 		duration: 700,
+							  		easing:'swing', // can be anything
+									step: function() { // called on every step
+							   			// Update the element's text with rounded-up value:
+							   			$('#range-interface').multipleRangeInterface('setValues', {id:2, start: Math.round(this.sectionStart)});
+							   			updateJsonText();
+									},
+									complete: function() {
+												  	$({sectionStop: 295}).animate({sectionStop: 500}, {
+											 		duration: 700,
+											  		easing:'swing', // can be anything
+													step: function() { // called on every step
+											   			// Update the element's text with rounded-up value:
+											   			$('#range-interface').multipleRangeInterface('setValues', {id:2, stop: Math.round(this.sectionStop)});
+											   			updateJsonText();
+													}
+							  				});
+									}
+							  	});
+								}
+		  				});
+				}
+		  	});
+
+
+			function updateJsonText() {
+				$('pre').text(JSON.stringify($('#range-interface').multipleRangeInterface('getValues'), null, 2));
+			}
+		</script>
+	</body>
+</html>
